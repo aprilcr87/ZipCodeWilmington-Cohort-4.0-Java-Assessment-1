@@ -2,6 +2,7 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.lang.*;
 
@@ -34,9 +35,15 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        List<Object> newList = Arrays.asList(objectArray);
-        newList.remove(objectToRemove);
-        return newList.toArray(new Object[newList.size()]);
+//        List<Object> newList = Arrays.asList(objectArray);
+//        newList.remove(objectToRemove);
+//        return newList.toArray(new Object[newList.size()]);
+//
+        List<Object> list = new ArrayList<>();
+        Collections.addAll(list, objectArray);
+        list.removeAll(Arrays.asList(objectToRemove));
+        return list.toArray();
+
     }
 
     /**

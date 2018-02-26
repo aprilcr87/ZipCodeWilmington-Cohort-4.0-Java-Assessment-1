@@ -26,11 +26,11 @@ public class ArrayUtilsTest {
     public void removeValueTest1() {
         // Given
         Integer valueToRemove = 7;
-        Integer[] expected = {1, 2, 8, 4, 5, 0, 9, 8};
-        Integer[] inputArray = {1, 2, 7, 8, 4, 5, 7, 0, 9, 8, 7};
+        Object[] expected = {1, 2, 8, 4, 5, 0, 9, 8};
+        Object[] inputArray = {1, 2, 7, 8, 4, 5, 7, 0, 9, 8, 7};
 
         // When
-        Integer[] actual = (Integer[]) ArrayUtils.removeValue(inputArray, valueToRemove);
+        Object[] actual = ArrayUtils.removeValue(inputArray, valueToRemove);
 
         // Then
         UnitTestingUtils.assertArrayEquality(expected, actual);
